@@ -18,11 +18,11 @@
                 </p>
             </asp:View>
             <asp:View ID="View1" runat="server">
-                <asp:ListView ID="Proyecto1" runat="server" DataSourceID="SqlDataSource1" DataKeyNames="NumeroFactura" OnSelectedIndexChanged="Proyecto1_SelectedIndexChanged">
+                <asp:ListView ID="Proyecto1" runat="server" DataSourceID="SqlDataSource1" DataKeyNames="Numero_Factura" OnSelectedIndexChanged="Proyecto1_SelectedIndexChanged">
                     <AlternatingItemTemplate>
-                        <tr style="background-color:#FFF8DC;">
+                        <tr style="background-color:#FAFAD2; color: #284775;">
                             <td>
-                                <asp:Label ID="NumeroFacturaLabel" runat="server" Text='<%# Eval("NumeroFactura") %>' />
+                                <asp:Label ID="Numero_FacturaLabel" runat="server" Text='<%# Eval("Numero_Factura") %>' />
                             </td>
                             <td>
                                 <asp:Label ID="PorcentajeLabel" runat="server" Text='<%# Eval("Porcentaje") %>' />
@@ -42,13 +42,13 @@
                         </tr>
                     </AlternatingItemTemplate>
                     <EditItemTemplate>
-                        <tr style="background-color:#008A8C;color: #FFFFFF;">
+                        <tr style="background-color:#FFCC66; color: #000080;">
                             <td>
                                 <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Actualizar" />
                                 <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancelar" />
                             </td>
                             <td>
-                                <asp:Label ID="NumeroFacturaLabel1" runat="server" Text='<%# Eval("NumeroFactura") %>' />
+                                <asp:Label ID="Numero_FacturaLabel1" runat="server" Text='<%# Eval("Numero_Factura") %>' />
                             </td>
                             <td>
                                 <asp:TextBox ID="PorcentajeTextBox" runat="server" Text='<%# Bind("Porcentaje") %>' />
@@ -81,7 +81,7 @@
                                 <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Borrar" />
                             </td>
                             <td>
-                                <asp:TextBox ID="NumeroFacturaTextBox" runat="server" Text='<%# Bind("NumeroFactura") %>' />
+                                <asp:TextBox ID="Numero_FacturaTextBox" runat="server" Text='<%# Bind("Numero_Factura") %>' />
                             </td>
                             <td>
                                 <asp:TextBox ID="PorcentajeTextBox" runat="server" Text='<%# Bind("Porcentaje") %>' />
@@ -101,9 +101,9 @@
                         </tr>
                     </InsertItemTemplate>
                     <ItemTemplate>
-                        <tr style="background-color:#DCDCDC;color: #000000;">
+                        <tr style="background-color:#FFFBD6; color: #333333;">
                             <td>
-                                <asp:Label ID="NumeroFacturaLabel" runat="server" Text='<%# Eval("NumeroFactura") %>' />
+                                <asp:Label ID="Numero_FacturaLabel" runat="server" Text='<%# Eval("Numero_Factura") %>' />
                             </td>
                             <td>
                                 <asp:Label ID="PorcentajeLabel" runat="server" Text='<%# Eval("Porcentaje") %>' />
@@ -127,8 +127,8 @@
                             <tr runat="server">
                                 <td runat="server">
                                     <table id="itemPlaceholderContainer" runat="server" border="1" style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;font-family: Verdana, Arial, Helvetica, sans-serif;">
-                                        <tr runat="server" style="background-color:#DCDCDC;color: #000000;">
-                                            <th runat="server">NumeroFactura</th>
+                                        <tr runat="server" style="background-color:#FFFBD6; color: #333333;">
+                                            <th runat="server">Numero_Factura</th>
                                             <th runat="server">Porcentaje</th>
                                             <th runat="server">Monto</th>
                                             <th runat="server">Fecha</th>
@@ -141,14 +141,14 @@
                                 </td>
                             </tr>
                             <tr runat="server">
-                                <td runat="server" style="text-align: center;background-color: #CCCCCC;font-family: Verdana, Arial, Helvetica, sans-serif;color: #000000;"></td>
+                                <td runat="server" style="text-align: center;background-color: #FFCC66; font-family: Verdana, Arial, Helvetica, sans-serif;color: #333333;"></td>
                             </tr>
                         </table>
                     </LayoutTemplate>
                     <SelectedItemTemplate>
-                        <tr style="background-color:#008A8C;font-weight: bold;color: #FFFFFF;">
+                        <tr style="background-color:#FFCC66; font-weight: bold;color: #000080;">
                             <td>
-                                <asp:Label ID="NumeroFacturaLabel" runat="server" Text='<%# Eval("NumeroFactura") %>' />
+                                <asp:Label ID="Numero_FacturaLabel" runat="server" Text='<%# Eval("Numero_Factura") %>' />
                             </td>
                             <td>
                                 <asp:Label ID="PorcentajeLabel" runat="server" Text='<%# Eval("Porcentaje") %>' />
@@ -168,7 +168,7 @@
                         </tr>
                     </SelectedItemTemplate>
                 </asp:ListView>
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [NumeroFactura], [Porcentaje], [Monto], [Fecha], [NumeroCuota], [VerFactura] FROM [Proyectos]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [Numero_Factura], [Porcentaje], [Monto], [Fecha], [NumeroCuota], [VerFactura] FROM [Proyectos]"></asp:SqlDataSource>
             </asp:View>
             </asp:MultiView>
         </p>
